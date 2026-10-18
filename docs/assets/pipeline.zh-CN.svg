@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="352" viewBox="0 0 1280 352" role="img" aria-labelledby="title desc">
+  <title id="title">REA-Backend 工作流程</title>
+  <desc id="desc">客户端源码和 APK 汇合为行为证据与经过审查的后端需求，构建独立后端，通过客户端验证反馈改进。</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF9FF"/>
+      <stop offset="1" stop-color="#F5F2FF"/>
+    </linearGradient>
+    <linearGradient id="backend" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7657E8"/>
+      <stop offset="1" stop-color="#5835B5"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" stroke="#9A8ABF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="1278" height="350" rx="24" fill="url(#panel)" stroke="#E7E0F4"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="48" y="43" fill="#81758F" font-size="13" font-weight="700" letter-spacing="1.5">两种输入路线，一套后端构建流程</text>
+    <g fill="none" stroke="#9A8ABF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+      <path d="M254 123H470Q486 123 486 139V161Q486 177 502 177H514"/>
+      <path d="M254 231H298"/>
+      <path d="M444 231H470Q486 231 486 215V199Q486 183 502 183H514"/>
+      <path d="M700 180H736"/>
+      <path d="M920 180H968"/>
+      <path d="M1100 248V281Q1100 297 1084 297H623Q607 297 607 281V232" stroke-dasharray="5 6"/>
+    </g>
+    <g stroke="#E3DBF0" fill="#FFFFFF">
+      <rect x="48" y="85" width="206" height="76" rx="14"/>
+      <rect x="48" y="193" width="206" height="76" rx="14"/>
+      <rect x="298" y="193" width="146" height="76" rx="14" fill="#EDE6FF"/>
+      <rect x="514" y="138" width="186" height="84" rx="14"/>
+      <rect x="736" y="138" width="184" height="84" rx="14"/>
+    </g>
+    <rect x="968" y="120" width="264" height="120" rx="18" fill="url(#backend)"/>
+    <g fill="#302445" font-size="20" font-weight="700">
+      <text x="70" y="117">客户端源码</text>
+      <text x="70" y="225">APK</text>
+      <text x="314" y="225" font-size="16">APK 分析</text>
+      <text x="536" y="174">行为证据</text>
+      <text x="756" y="174" font-size="19">后端需求</text>
+    </g>
+    <g fill="#81758F" font-size="14">
+      <text x="70" y="141">固定版本</text>
+      <text x="70" y="249">固定安装包</text>
+      <text x="318" y="249" font-size="13">解码与追踪</text>
+      <text x="536" y="199">契约与未知项</text>
+      <text x="756" y="199">SRS 与独立审查</text>
+    </g>
+    <text x="992" y="169" fill="#FFFFFF" font-size="26" font-weight="700">独立后端</text>
+    <text x="992" y="199" fill="#E9DFFF" font-size="15">服务 · 数据 · 账号</text>
+    <rect x="694" y="282" width="320" height="30" rx="15" fill="#F7F4FD"/>
+    <text x="854" y="302" fill="#75638F" text-anchor="middle" font-size="14">客户端验证 · 定向修复</text>
+  </g>
+</svg>

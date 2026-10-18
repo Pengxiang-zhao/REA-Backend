@@ -1,0 +1,29 @@
+# Local editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local.json
+*.pem
+*.key
+*.jks
+*.keystore
+
+# Local environments and generated artifacts
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+build/
+dist/
+*.egg-info/
+artifacts/
+runs/
+*.sqlite*
+*.apk
+*.apks
