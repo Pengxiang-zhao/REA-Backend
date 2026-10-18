@@ -1,0 +1,4 @@
+interface:
+  display_name: "REA-Backend"
+  short_description: "Build traceable backends from client source or APKs"
+  default_prompt: "Use $rea-backend to discover and review this client's backend requirements, then implement and validate the selected scope."

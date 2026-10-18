@@ -1,0 +1,8 @@
+{
+  "format": "rea-backend.srs-config/v1",
+  "app": {"id": "synthetic-pricepad", "name": "Synthetic PricePad", "version": "probe-1", "platform": "Android", "variant": "partial-java-excerpt"},
+  "route": "source",
+  "context": {"mode": "client_only", "notes": "Only the declared synthetic client is business evidence. Do not read other fixtures, App recipes, historical conclusions or implementations."},
+  "inputs": [{"id": "client", "kind": "client_source", "path": "input", "version": "probe-1", "access": "generation", "complete": false, "limitations": ["Transport, UI, concrete Store and original server are unavailable. Local Java standard-library probes are permitted, but are not Android execution."], "exclude": []}],
+  "environment": {"goals": ["Discover backend obligations and unresolved contracts from the supplied client excerpt."], "constraints": ["Do not implement a backend, use the network or infer original server policy.", "Keep all generated exercise output outside the fixture input directory."]}
+}

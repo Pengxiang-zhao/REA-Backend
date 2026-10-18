@@ -1,0 +1,8 @@
+{
+  "format": "rea-backend.srs-config/v1",
+  "app": {"id": "synthetic-trailshelf", "name": "Synthetic TrailShelf", "version": "probe-1", "platform": "Android", "variant": "partial-excerpt"},
+  "route": "source",
+  "context": {"mode": "client_only", "notes": "Synthetic workflow probe. Only declared materials are permitted; do not read other apps, historical answers, implementations or test results."},
+  "inputs": [{"id": "client", "kind": "client_source", "path": "input", "version": "synthetic-probe-1", "access": "generation", "complete": false, "limitations": ["Synthetic incomplete excerpt. WireIds and concrete transport/store implementations are unavailable; no additional source or runtime is approved."], "exclude": []}],
+  "environment": {"goals": ["Discover backend obligations and unresolved client contracts from the supplied excerpt."], "constraints": ["Do not invent unavailable transport or dependency behavior.", "Do not implement a backend or run a live service."]}
+}

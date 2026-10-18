@@ -1,0 +1,31 @@
+{
+  "format": "rea-backend.srs-config/v1",
+  "app": {
+    "id": "example-app",
+    "name": "Example App",
+    "version": "REPLACE_WITH_FIXED_VERSION",
+    "platform": "Android",
+    "variant": "main"
+  },
+  "route": "source",
+  "context": {
+    "mode": "client_only",
+    "notes": "Only the declared client materials are available for generation."
+  },
+  "inputs": [
+    {
+      "id": "client",
+      "kind": "client_source",
+      "path": "../inputs/client",
+      "version": "REPLACE_WITH_FIXED_COMMIT",
+      "access": "generation",
+      "complete": false,
+      "limitations": ["Replace this statement after checking the checkout and dependencies."],
+      "exclude": []
+    }
+  ],
+  "environment": {
+    "goals": ["A standalone backend supporting the selected client workflows."],
+    "constraints": ["No runtime dependency on the original service."]
+  }
+}

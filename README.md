@@ -21,7 +21,7 @@ REA-Backend uses Android client source code or an APK to discover backend requir
 Within the declared feature scope, the existing client connects to a service that maintains its own accounts, business data, and persistence. Each run records the permitted inputs, any client connection adaptations, and remaining gaps. The original server implementation is excluded from the default build inputs.
 
 > [!NOTE]
-> **Documentation preview.** This repository describes the existing pipeline and its planned standalone release. Preparing and verifying the standalone package is in progress; executable pipeline code is not included yet.
+> **Initial standalone implementation.** This repository includes the Python CLI, an agent workflow, templates, and engineering documentation. The current version focuses on the reusable pipeline; generated app services and input materials are maintained separately.
 
 ## Why REA-Backend
 
@@ -62,32 +62,47 @@ The generated service runs independently of the analysis tools and coding agent.
 
 ## Getting started
 
-Start with the engineering documentation:
+Use **Python 3.12 or later**. The core CLI uses the Python standard library and has no required third-party Python runtime dependencies.
 
-1. Read the [engineering specification](docs/engineering.md) for inputs, stages, handoffs, and quality requirements.
-2. Review the [release plan](docs/release-plan.md) for standalone packaging, installation checks, and the first public release scope.
+```bash
+git clone https://github.com/Pengxiang-zhao/REA-Backend.git
+cd REA-Backend
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install .
+rea-backend init-workspace --out workspace
+```
 
-Standalone package preparation is ongoing. Installation instructions will accompany the verified package. The initial open-source scope is the reusable pipeline; generated app services and input materials are maintained separately.
+This creates a workspace containing the workflow, reference documents, and input templates. Ask your host coding agent to read `workspace/skills/rea-backend/SKILL.md`, then provide the client source or APK and the intended feature scope. The workflow is exported locally; it is not installed into global agent settings automatically.
+
+Inspect available commands with either entry point:
+
+```bash
+rea-backend --help
+python -m rea_backend --help
+```
+
+APK inspection and Android validation require separately installed external tools. Follow [Getting started](docs/getting-started.md) for setup and the first run, or read the [bundled agent workflow](src/rea_backend/resources/skills/rea-backend/SKILL.md) directly.
 
 ## Existing examples
 
-The pipeline has been exercised through both source and APK routes on **wallabag**, **ReadYou**, **Tempo**, **Grocy**, and **Nextcloud**.
+Earlier pipeline runs exercised both source and APK routes on **wallabag**, **ReadYou**, **Tempo**, **Grocy**, and **Nextcloud**.
 
-These examples cover selected workflows under their own frozen method versions. Each run records its scope, limitations, and validation results. Example services and app materials are outside this documentation preview.
+These examples cover selected workflows under their own frozen method versions. Each run records its scope, limitations, and validation results. Repeating these runs with the standalone package remains on the roadmap. Example services and app materials are maintained separately.
 
 ## Documentation
 
 | Document | Contents |
 | --- | --- |
+| [Getting started](docs/getting-started.md) | Installation, workspace setup, external tools, and the first run |
+| [Agent workflow](src/rea_backend/resources/skills/rea-backend/SKILL.md) | Stage routing, handoffs, and instructions for the host coding agent |
 | [Engineering specification](docs/engineering.md) | Scope, architecture, stages, artifacts, and robustness mechanisms |
-| [Release plan](docs/release-plan.md) | First-release scope, target repository layout, and acceptance checks |
+| [Release plan](docs/release-plan.md) | Current release scope and remaining work |
 | [Acknowledgments](docs/acknowledgments.md) | Upstream tools and attribution |
 
 ## Roadmap
 
-- [ ] Extract the core code, agent workflow, templates, and method resources.
-- [ ] Verify installation and resource loading outside the original repository.
-- [ ] Run both input routes end to end from the standalone project.
+- [ ] Repeat real-app workflows through both input routes with the standalone package.
 - [ ] Reduce repeated work through caching and execution tools while preserving required checks.
 - [ ] Validate dependency and startup profiles for additional backend languages.
 

@@ -1,6 +1,6 @@
 # REA-Backend Engineering Specification
 
-**Status:** Engineering preview; the standalone package is in preparation.
+**Status:** Initial standalone implementation; see [Getting started](getting-started.md).
 
 **Date:** October 18, 2026.
 
@@ -124,7 +124,7 @@ A changed SRS baseline requires corresponding early validation to be re-establis
 
 ## 6. Artifacts and invariants
 
-The workflow preserves the following artifacts. Exact public file formats and command interfaces will be documented with the standalone package.
+The workflow preserves the following artifacts. Exact fields and commands are maintained in the [packaged format reference](../src/rea_backend/resources/docs/srs-format.md) and [implementation guide](../src/rea_backend/resources/docs/srs-to-backend.md).
 
 | Artifact | Purpose |
 | --- | --- |
@@ -160,8 +160,8 @@ A single `done` value must not combine these states. Report review approval, suc
 
 Performance improvements should come from caching reusable static materials, targeted retrieval, parallel independent investigations, and automated execution and collection. Cache reuse must check identity and applicability. Cached results cannot replace required validation of a new build.
 
-## 8. Initial release scope
+## 8. Current package scope
 
-The first release focuses on material preparation, analysis records, requirements freezing and review, implementation mapping, build packaging, and development validation. Android tools remain adapters for real-client validation. Successful data collection does not automatically establish correct business behavior.
+The package includes material preparation, analysis records, requirements freezing and review, implementation mapping, build packaging, and development validation. Android tools remain adapters for real-client validation. Successful data collection does not automatically establish correct business behavior.
 
 The current implementation and examples are organized around Python services. Dependency and startup profiles for other languages have not been validated. The requirements method is language-independent; support for additional backend stacks requires deployment and client checks.

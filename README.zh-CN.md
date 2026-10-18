@@ -21,7 +21,7 @@ REA-Backend 从 Android 客户端源码或 APK 中发现后端需求，编写经
 在声明的功能范围内，既有客户端连接自主维护账号、业务数据和持久化的服务。每次运行记录获准输入、客户端连接调整以及尚未解决的缺口。原服务端实现不作为默认构建输入。
 
 > [!NOTE]
-> **文档预览。** 当前仓库介绍已有 pipeline 及独立版本的发布计划。独立安装包正在准备和验证中，尚未包含可执行的 pipeline 代码。
+> **首版独立实现。** 当前仓库包含 Python CLI、agent 工作流、模板和工程文档。本版聚焦可复用 pipeline；生成的 App 服务与输入材料单独维护。
 
 ## 为什么选择 REA-Backend
 
@@ -62,18 +62,33 @@ REA-Backend 从 Android 客户端源码或 APK 中发现后端需求，编写经
 
 ## 开始使用
 
-从工程文档开始：
+需要 **Python 3.12 或更新版本**。核心 CLI 使用 Python 标准库，没有必需的第三方 Python 运行时依赖。
 
-1. 阅读[工程规格](docs/engineering.md)，了解输入、阶段、交接产物与质量要求。
-2. 阅读[发布计划](docs/release-plan.md)，了解独立打包、安装检查与首版开源范围。
+```bash
+git clone https://github.com/Pengxiang-zhao/REA-Backend.git
+cd REA-Backend
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install .
+rea-backend init-workspace --out workspace
+```
 
-独立安装包正在准备中，安装说明将在验证完成后提供。首版开源范围聚焦可复用 pipeline；生成的 App 服务与输入材料单独维护。
+这会创建包含工作流、参考文档和输入模板的工作目录。让宿主编程 agent 读取 `workspace/skills/rea-backend/SKILL.md`，然后提供客户端源码或 APK 及目标功能范围。工作流导出到本地，不会自动写入全局 agent 配置。
+
+可以通过任一入口查看可用命令：
+
+```bash
+rea-backend --help
+python -m rea_backend --help
+```
+
+APK 分析和 Android 验证所需的外部工具需要单独安装。环境准备和首次运行步骤见[入门指南](docs/getting-started.md)，也可以直接阅读[随包提供的 agent 工作流](src/rea_backend/resources/skills/rea-backend/SKILL.md)。
 
 ## 已有示例
 
-Pipeline 已在 **wallabag**、**ReadYou**、**Tempo**、**Grocy** 与 **Nextcloud** 上实践了源码和 APK 两条路线。
+此前的 pipeline 已在 **wallabag**、**ReadYou**、**Tempo**、**Grocy** 与 **Nextcloud** 上实践了源码和 APK 两条路线。
 
-这些示例覆盖各自冻结方法版本下的选定工作流。每次运行记录具体范围、限制与验证结果。示例服务与 App 材料不包含在本次文档预览中。
+这些示例覆盖各自冻结方法版本下的选定工作流。每次运行记录具体范围、限制与验证结果。使用本独立安装包复跑这些工作流仍在路线图中。示例服务与 App 材料单独维护。
 
 ## 文档导航
 
@@ -81,15 +96,15 @@ Pipeline 已在 **wallabag**、**ReadYou**、**Tempo**、**Grocy** 与 **Nextclo
 
 | 文档 | 内容 |
 | --- | --- |
+| [入门指南](docs/getting-started.md) | 安装、工作目录配置、外部工具与首次运行 |
+| [Agent 工作流](src/rea_backend/resources/skills/rea-backend/SKILL.md) | 阶段路由、交接要求与宿主编程 agent 使用说明 |
 | [工程规格](docs/engineering.md) | 范围、架构、阶段、产物与鲁棒性机制 |
-| [发布计划](docs/release-plan.md) | 首版范围、目标仓库结构与验收检查 |
+| [发布计划](docs/release-plan.md) | 当前版本范围与后续工作 |
 | [致谢](docs/acknowledgments.md) | 上游工具与来源说明 |
 
 ## 路线图
 
-- [ ] 拆分核心代码、agent 工作流、模板与方法资源。
-- [ ] 验证原仓库之外的独立安装与资源加载。
-- [ ] 在独立工程中完整运行源码与 APK 两条路线。
+- [ ] 使用独立安装包，沿源码和 APK 两条路线复跑实际 App 工作流。
 - [ ] 通过缓存和执行工具减少重复工作，保留必要检查。
 - [ ] 验证更多后端语言的依赖与启动配置。
 

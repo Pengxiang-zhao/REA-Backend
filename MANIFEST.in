@@ -1,0 +1,3 @@
+include README.zh-CN.md
+recursive-include docs *.md *.svg
+recursive-include tests *.py *.json *.md *.kt *.java

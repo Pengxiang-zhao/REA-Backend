@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rea-backend"
+version = "0.1.0"
+description = "From client source or APK to evidence-backed requirements and runnable backends"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1.2,<2", "setuptools>=68", "wheel"]
+
+[project.scripts]
+rea-backend = "rea_backend.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Pengxiang-zhao/REA-Backend"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["rea_backend*"]
+
+[tool.setuptools.package-data]
+rea_backend = ["*.mjs", "resources/docs/*.md", "resources/templates/*", "resources/skills/rea-backend/SKILL.md", "resources/skills/rea-backend/references/*.md", "resources/skills/rea-backend/agents/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
