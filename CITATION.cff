@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: REA-Backend
+abstract: >-
+  An agent-driven pipeline for building independent backends from Android client
+  source or APKs, with evidence-backed requirements and client validation.
+authors:
+  - name: Pengxiang-zhao
+    website: https://github.com/Pengxiang-zhao
+version: 0.1.0
+repository-code: https://github.com/Pengxiang-zhao/REA-Backend
+url: https://github.com/Pengxiang-zhao/REA-Backend
+keywords:
+  - backend reconstruction
+  - Android
+  - APK
+  - requirements discovery
+  - agent workflow

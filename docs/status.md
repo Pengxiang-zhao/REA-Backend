@@ -1,4 +1,4 @@
-# Package scope and next steps
+# Package scope and limitations
 
 The initial standalone implementation includes the reusable requirements-to-backend workflow and its execution tools. Install it from this repository with `python -m pip install .`; see [Getting started](getting-started.md) for inputs and external tool setup.
 
@@ -50,10 +50,11 @@ Core regression tests cover revision conflicts, forbidden input access, missing 
 
 Real-client evidence belongs to a specific app, version, build, and tool configuration. Prior app runs retain their own baselines. A fresh standalone-package run is required before attributing those outcomes to this version.
 
-## Next steps
+Earlier pipeline runs exercised selected source and APK workflows on wallabag, ReadYou, Tempo, Grocy, and Nextcloud. Those services and app materials are maintained separately; they are not bundled examples of this standalone package.
 
-- Complete fresh source and APK workflows with real apps using the standalone package.
-- Reduce repeated collection through identity-checked caches and targeted tool execution while retaining required checks.
-- Validate dependency and startup profiles for additional backend languages.
-- Verify additional operating systems and external tool versions.
-- Select the project license before a public code release and preserve notices for any third-party materials distributed with it.
+## Known limits
+
+- Fresh real-app workflows using this standalone package have not been completed.
+- Dependency and startup profiles for additional backend languages are not validated.
+- Process cleanup and device locking are exercised on POSIX systems; Windows device execution is unverified.
+- External analysis and Android tools are installed separately. Compatibility depends on their versions and configuration.

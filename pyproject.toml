@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "rea-backend"
 version = "0.1.0"
-description = "From client source or APK to evidence-backed requirements and runnable backends"
+description = "Agent-driven pipeline for building independent backends from Android client source or APKs"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []

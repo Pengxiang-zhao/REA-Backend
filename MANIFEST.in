@@ -1,3 +1,4 @@
 include README.zh-CN.md
+include CITATION.cff
 recursive-include docs *.md *.svg
 recursive-include tests *.py *.json *.md *.kt *.java
